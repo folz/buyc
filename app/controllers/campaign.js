@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   needs: ['businesses'],
   selectedBusiness: null,
-  distanceUnits: ["feet", "miles"],
+  distanceUnits: ["ft", "mi"],
   lastSavedModel: null,
   succeeded: false,
   run: false,

@@ -17,6 +17,8 @@
     "metisMenu": "~1.1.1",
     "ember-parse-adapter": "https://github.com/jspavlick/ember-parse-adapter.git#master",
     "morrisjs": "~0.5.1",
-    "eve-adobe": "~0.2.4"
+    "eve-adobe": "~0.2.4",
+    "moment": "~2.8.1",
+    "pikaday": "~1.2.0"
   }
 }
