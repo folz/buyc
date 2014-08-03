@@ -1,7 +1,7 @@
 <h1 class="page-header">Start a new coupon campaign</h1>
   {{#if run}}
     {{#if succeeded}}
-      <div data-alert class="alert alert-successful">
+      <div data-alert class="jumbotron">
         Your campaign has been launched!
         <h1>{{code}}</h1>
         <p>When a customer wants to redeem their coupon, enter this code into their device.</p>
@@ -25,25 +25,7 @@
     <p>{{selectedBusiness.id}} - {{selectedBusiness.name}}</p>
   </div>
   <div class="form-inline">
-    <h3>Price Details</h3>
-    <div class="form-group">
-      The customer must spend at least
-      <div class="input-group">
-        <div class="input-group-addon">$</div>
-        {{input type="text" id="min-spend" class="form-control" value=min_spend}}
-      </div>
-      to use their coupon.
-    </div>
-    <br><br>
-    <div class="form-group">
-      I am willing to spend
-      <div class="input-group">
-        <div class="input-group-addon">$</div>
-        {{input type="text" id="coupon-value" class="form-control" value=coupon_value}}
-      </div>
-      per customer.
-    </div>
-    <br><br>
+    <h3>Reach</h3>
     <div class="form-group">
       In total, I would like to reach about
       {{input type="text" id="reach" class="form-control" value=reach}}

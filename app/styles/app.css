@@ -390,7 +390,7 @@ table.dataTable thead .sorting:after {
   width: 70px;
 }
 
-#ad-text {
+#title, #description {
   display: block !important;
 }
 

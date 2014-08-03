@@ -12,8 +12,6 @@ export default Ember.Controller.extend({
     save: function() {
       var controller = this;
       controller.get('model').set('business', controller.get('selectedBusiness'));
-      controller.get('model').set('minDollarsToSpend', parseFloat(controller.get('min_spend')));
-      controller.get('model').set('couponPointValue', parseFloat(controller.get('coupon_value')) * 100);
       controller.get('model').set('reach', parseInt(controller.get('reach')));
       controller.get('model').set('image', controller.get('image'));
       controller.get('model').set('title', controller.get('title'));
