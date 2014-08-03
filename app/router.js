@@ -7,6 +7,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('campaign');
   this.route('business');
+  this.route('businesses');
 });
 
 export default Router;

@@ -1,8 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  name: DS.attr('string'),
-  location: DS.attr('parse-geo-point'),
+  business: DS.belongsTo('business'),
   minDollarsToSpend: DS.attr('number'),
   couponPointValue: DS.attr('number'),
   reach: DS.attr('number'),
