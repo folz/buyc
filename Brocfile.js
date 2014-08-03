@@ -25,6 +25,7 @@ app.import('vendor/fontawesome/css/font-awesome.css');
 
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/metisMenu/dist/metisMenu.js');
+app.import('vendor/ember-parse-adapter/dist/ember-parse-adapter.js');
 
 var extraAssets = pickFiles('vendor/bootstrap/dist/fonts',{
     srcDir: '/',
