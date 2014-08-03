@@ -8,6 +8,6 @@ export default Ember.Route.extend({
     var route = this;
     return route.store.find('business').then(function(items) {
       route.controllerFor('businesses').set('content', items);
-    })
+    });
   }
 });

@@ -22,10 +22,14 @@ var app = new EmberApp();
 app.import('vendor/bootstrap/dist/css/bootstrap.css');
 app.import('vendor/metisMenu/dist/metisMenu.css');
 app.import('vendor/fontawesome/css/font-awesome.css');
+app.import('vendor/morrisjs/morris.css');
 
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/metisMenu/dist/metisMenu.js');
 app.import('vendor/ember-parse-adapter/dist/ember-parse-adapter.js');
+app.import('vendor/eve-adobe/eve.js');
+app.import('vendor/raphael/raphael.js');
+app.import('vendor/morrisjs/morris.js');
 
 var extraAssets = pickFiles('vendor/bootstrap/dist/fonts',{
     srcDir: '/',
