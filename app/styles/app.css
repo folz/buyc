@@ -360,7 +360,7 @@ h1 {
   margin: auto;
 }
 
-#campaign form {
+#campaign > div {
   margin: 48px 0;
 }
 
