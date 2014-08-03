@@ -15,7 +15,9 @@ export default Ember.Controller.extend({
       controller.get('model').set('minDollarsToSpend', parseFloat(controller.get('min_spend')));
       controller.get('model').set('couponPointValue', parseFloat(controller.get('coupon_value')) * 100);
       controller.get('model').set('reach', parseInt(controller.get('reach')));
-      controller.get('model').set('adText', controller.get('ad_text'));
+      controller.get('model').set('image', controller.get('image'));
+      controller.get('model').set('title', controller.get('title'));
+      controller.get('model').set('description', controller.get('description'));
       var multiplier = controller.get('distance_unit') === 'miles' ? 5280 : 1;
       controller.get('model').set('maxDistanceInFeet', parseInt(controller.get('max_distance')) * multiplier);
       controller.set('code', Math.floor(Math.random() * 10000));

@@ -6,7 +6,8 @@ export default DS.Model.extend({
   couponPointValue: DS.attr('number'),
   reach: DS.attr('number'),
   image: DS.attr('string'),
-  adText: DS.attr('string'),
+  title: DS.attr('string'),
+  description: DS.attr('string'),
   maxDistanceInFeet: DS.attr('number'),
   code: DS.attr('number')
 });
