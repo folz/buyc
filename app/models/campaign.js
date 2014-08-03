@@ -1,11 +1,11 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  business: DS.belongsTo('business'),
-  title: DS.attr('string'),
-  desc: DS.attr('string'),
-  start: DS.attr('date'),
-  end: DS.attr('date'),
-  tos: DS.attr('string'),
-  offers: DS.attr('number'),
+  name: DS.attr('string'),
+  location: DS.attr('parse-geo-point'),
+  minDollarsToSpend: DS.attr('number'),
+  couponPointValue: DS.attr('number'),
+  reach: DS.attr('number'),
+  adText: DS.attr('string'),
+  maxDistanceInFeet: DS.attr('number')
 });
