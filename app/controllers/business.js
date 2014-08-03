@@ -1,6 +1,8 @@
-var googleMapsApiKey = "AIzaSyC7dy0vGgygGSfavGOEQqslL2ltP8pqdRk";
+/*global $, EmberParseAdapter*/
 
 import Ember from 'ember';
+
+var googleMapsApiKey = "AIzaSyC7dy0vGgygGSfavGOEQqslL2ltP8pqdRk";
 
 export default Ember.Controller.extend({
   lastSavedModel: null,
