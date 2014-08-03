@@ -39,10 +39,10 @@
   </div>
   <div class="form-horizontal">
     <h3>Ad Options</h3>
-    <!--<div class="form-group">
+    <div class="form-group">
       <label for="image" class="col-sm-3 control-label">Image</label>
-      <div class="col-sm-9">{{input type="file" id="image" class="form-control" value=image}}</div>
-    </div>-->
+      <div class="col-sm-9">{{input type="text" id="image" class="form-control" placeholder="URL" value=image}}</div>
+    </div>
     <div class="form-group">
       <label for="ad-text" class="col-sm-3 control-label">Text</label>
       <div class="col-sm-9">{{textarea id="ad-text" class="form-control" value=ad_text}}</div>
@@ -54,7 +54,7 @@
       The customer should be no more than
       {{input type="text" id="max_distance" class="form-control" value=max_distance}}
       {{view Ember.Select content=distanceUnits id="distance-unit" class="form-control" value=distance_unit}}
-      away from my address.
+      away from the business address.
     </div>
   </div>
   <div class="form">

@@ -1,26 +1,27 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <form role="form">
-      <div class="form-group">
-        <label for="id-name">Business name</label>
-        {{input type="text" id="id-name" name="name" value=name placeholder="E.g., Bob's Burgers" class="form-control"}}
-      </div>
-      <div class="form-group">
-        <label for="id-location">Location</label>
-        {{input type="text" id="id-location" name="location" value=location placeholder="E.g., 37.4025091,-122.1057978" class="form-control"}}
-      </div>
-      <button {{action 'save'}} class="btn btn-default">Create Business</button>
-    </form>
-    {{#if succeeded}}
-      <div data-alert class="alert-box success radius">
-        Successfully saved Business Model.
-        <a {{action 'reset'}} class="close">&times;</a>
-      </div>
-    {{/if}}
-    {{#if lastSavedModel}}
-      <div>id: {{lastSavedModel.id}}</div>
-      <div>Name: {{lastSavedModel.name}}</div>
-      <div>Created At: {{lastSavedModel.createdAt}}</div>
-    {{/if}}
+<h1 class="page-header">Register a new business</h1>
+<form class="main-form">
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label for="name" class="col-sm-3 control-label">Business Name</label>
+      <div class="col-sm-9">{{input type="text" id="name" class="form-control" value=name placeholder="E.g. Bob's Burgers"}}</div>
+    </div>
+    <div class="form-group">
+      <label for="location" class="col-sm-3 control-label">Address</label>
+      <div class="col-sm-9">{{input type="text" id="address" class="form-control" value=address placeholder="E.g. 335 Pioneer Way, Mountain View, CA"}}</div>
+    </div>
   </div>
-</div>
+  <div class="form">
+    <button {{action 'save'}} id="submit" class="btn btn-default">Register</button>
+  </div>
+  {{#if run}}
+    {{#if succeeded}}
+      <div data-alert class="alert alert-successful">
+        The business has been registered!
+      </div>
+    {{else}}
+      <div data-alert class="alert alert-danger">
+        Failed to register the business.
+      </div>
+    {{/if}}
+  {{/if}}
+</form>
