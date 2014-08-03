@@ -1,4 +1,4 @@
-/*global EmberParseAdapter*/
+var googleMapsApiKey = "AIzaSyC7dy0vGgygGSfavGOEQqslL2ltP8pqdRk";
 
 import Ember from 'ember';
 
@@ -7,34 +7,38 @@ export default Ember.Controller.extend({
   succeeded: false,
   name: null,
   actions: {
-    reset: function() {
-      this.set('name', null);
-      this.set('succeeded', null);
-    },
     save: function() {
       var controller = this;
-      var parsedGP = parseGeoPoint(this.get('location'));
-      this.get('model').set('name', this.get('name'));
-      this.get('model').set('location', new EmberParseAdapter.GeoPoint(parsedGP.latitude, parsedGP.longitude));
-      this.get('model').save().then(
-        function(business) {
-          controller.set('succeeded', true);
-          controller.set('lastSavedModel', business);
-        },
-        function(error) {
-          controller.set('succeeded', false);
-          console.log(error);
-        }
-      );
+      if (this.get('address')) {
+        $.ajax({
+          dataType: "json",
+          url: "https://maps.googleapis.com/maps/api/geocode/json?key=" + googleMapsApiKey + "&address=" + this.get('address').replace(' ', '+'),
+          success: function(data) {
+            if (data && data.results && data.results[0] && data.results[0].geometry) {
+              var location = data.results[0].geometry.location;
+              controller.get('model').set('name', controller.get('name'));
+              controller.get('model').set('address', controller.get('address'));
+              controller.get('model').set('location', new EmberParseAdapter.GeoPoint(location.lat, location.lng));
+              controller.get('model').save().then(
+                function(business) {
+                  controller.set('run', true);
+                  controller.set('succeeded', true);
+                  controller.set('lastSavedModel', business);
+                  console.log(business);
+                },
+                function(error) {
+                  controller.set('run', true);
+                  controller.set('succeeded', false);
+                  console.log(error);
+                }
+              );
+            }
+          }
+        });
+      } else {
+        controller.set('run', true);
+        controller.set('succeeded', false);
+      }
     }
   }
 });
-
-function parseGeoPoint(gpString) {
-  var lat = parseFloat(gpString.split(',')[0]);
-  var long = parseFloat(gpString.split(',')[1]);
-  return {
-    'latitude': lat,
-    'longitude': long
-  };
-}

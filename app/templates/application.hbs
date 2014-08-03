@@ -3,13 +3,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">BuyCombinator</a>
+            {{#link-to 'index'}}BuyCombinator{{/link-to}}
         </div>
         <!-- /.navbar-header -->
 
@@ -22,8 +16,13 @@
                         {{/link-to}}
                     </li>
                     <li>
+                        {{#link-to 'business'}}
+                          <i class="fa fa-building fa-fw"></i> New Business
+                        {{/link-to}}
+                    </li>
+                    <li>
                         {{#link-to 'campaign'}}
-                          <i class="fa fa-edit fa-fw"></i> New Campaign
+                          <i class="fa fa-paper-plane fa-fw"></i> New Campaign
                         {{/link-to}}
                     </li>
                 </ul>

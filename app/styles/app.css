@@ -344,23 +344,45 @@ table.dataTable thead .sorting:after {
     color: #df8a13;
 }
 
-h1 {
-  text-align: center;
-  padding: 24px 0;
-  margin: 0;
-  background-color: #80A480;
-  color: white;
-  font-weight: lighter;
-  font-size: 40px;
+.navbar {
+  margin-bottom: 0;
 }
 
-#campaign {
+.navbar-header {
+  background-color: #80A480;
+  float: none;
+}
+
+.navbar-header a {
+  color: white;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  line-height: 40px;
+  font-size: 40px;
+  font-weight: lighter;
+}
+
+.navbar-header a:hover {
+  text-decoration: none;
+}
+
+.sidebar {
+  margin-top: 0;
+}
+
+#page-wrapper {
+  overflow: auto;
+}
+
+.main-form {
   max-width: 800px;
-  padding: 24px;
+  padding-bottom: 24px;
   margin: auto;
 }
 
-#campaign > div {
+.main-form > div {
   margin: 48px 0;
 }
 
