@@ -8,5 +8,6 @@ export default DS.Model.extend({
   reach: DS.attr('number'),
   image: DS.attr('string'),
   adText: DS.attr('string'),
-  maxDistanceInFeet: DS.attr('number')
+  maxDistanceInFeet: DS.attr('number'),
+  code: DS.attr('number')
 });

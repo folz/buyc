@@ -62,8 +62,10 @@
   </div>
   {{#if run}}
     {{#if succeeded}}
-      <div data-alert class="alert alert-successful">
-        Your campaign has been launched!
+      <div class="jumbotron">
+        <p>Your campaign has been launched!</p>
+        <h1>{{code}}</h1>
+        <p>When a customer wants to redeem their coupon, enter this code into their device.</p>
       </div>
     {{else}}
       <div data-alert class="alert alert-danger">
