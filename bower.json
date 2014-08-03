@@ -16,8 +16,5 @@
     "fontawesome": "~4.1.0",
     "metisMenu": "~1.1.1",
     "ember-parse-adapter": "https://github.com/jspavlick/ember-parse-adapter.git#master"
-  },
-  "resolutions": {
-    "ember-parse-adapter": "master"
   }
 }
