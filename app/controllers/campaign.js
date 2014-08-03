@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
   lastSavedModel: null,
   succeeded: false,
   run: false,
+  code: 0,
   actions: {
     save: function() {
       var controller = this;
@@ -21,6 +22,8 @@ export default Ember.Controller.extend({
       controller.get('model').set('adText', controller.get('ad_text'));
       var multiplier = controller.get('distance_unit') === 'miles' ? 5280 : 1;
       controller.get('model').set('maxDistanceInFeet', parseInt(controller.get('max_distance')) * multiplier);
+      controller.set('code', Math.floor(Math.random() * 10000));
+      controller.get('model').set('code', controller.get('code'));
       controller.get('model').save().then(
         function(business) {
           controller.set('run', true);
