@@ -1,3 +1,5 @@
+/*global $, EmberParseAdapter*/
+
 var googleMapsApiKey = "AIzaSyC7dy0vGgygGSfavGOEQqslL2ltP8pqdRk";
 
 import Ember from 'ember';
@@ -24,7 +26,7 @@ export default Ember.Controller.extend({
               controller.get('model').set('reach', parseInt(controller.get('reach')));
               // controller.get('model').set('image', controller.get('image'));
               controller.get('model').set('adText', controller.get('ad_text'));
-              var multiplier = controller.get('distance_unit') == 'miles' ? 5280 : 1;
+              var multiplier = controller.get('distance_unit') === 'miles' ? 5280 : 1;
               controller.get('model').set('maxDistanceInFeet', parseInt(controller.get('max_distance')) * multiplier);
               controller.get('model').save().then(
                 function(business) {
