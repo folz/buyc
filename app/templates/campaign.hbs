@@ -1,75 +1,74 @@
-  <h1>BuyCombinator</h1>
-  <form id="campaign">
-    <h2>Start a new coupon campaign</h2>
-    <div class="form-horizontal">
-      <h3>General Information</h3>
-      <div class="form-group">
-        <label for="name" class="col-sm-3 control-label">Business Name</label>
-        <div class="col-sm-9">{{input type="text" id="name" class="form-control" value=name placeholder="E.g. Bob's Burgers"}}</div>
-      </div>
-      <div class="form-group">
-        <label for="location" class="col-sm-3 control-label">Address</label>
-        <div class="col-sm-9">{{input type="text" id="location" class="form-control" value=location placeholder="E.g. 335 Pioneer Way, Mountain View, CA"}}</div>
-      </div>
+<h1 class="page-header">Start a new coupon campaign</h1>
+<form class="main-form">
+  <div class="form-horizontal">
+    <h3>General Information</h3>
+    <div class="form-group">
+      <label for="name" class="col-sm-3 control-label">Business Name</label>
+      <div class="col-sm-9">{{input type="text" id="name" class="form-control" value=name placeholder="E.g. Bob's Burgers"}}</div>
     </div>
-    <div class="form-inline">
-      <h3>Price Details</h3>
-      <div class="form-group">
-        The customer must spend at least
-        <div class="input-group">
-          <div class="input-group-addon">$</div>
-          {{input type="text" id="min-spend" class="form-control" value=min_spend}}
-        </div>
-        to use their coupon.
-      </div>
-      <br><br>
-      <div class="form-group">
-        I am willing to spend
-        <div class="input-group">
-          <div class="input-group-addon">$</div>
-          {{input type="text" id="coupon-value" class="form-control" value=coupon_value}}
-        </div>
-        per customer.
-      </div>
-      <br><br>
-      <div class="form-group">
-        In total, I would like to reach about
-        {{input type="text" id="reach" class="form-control" value=reach}}
-        people today.
-      </div>
+    <div class="form-group">
+      <label for="location" class="col-sm-3 control-label">Address</label>
+      <div class="col-sm-9">{{input type="text" id="location" class="form-control" value=location placeholder="E.g. 335 Pioneer Way, Mountain View, CA"}}</div>
     </div>
-    <div class="form-horizontal">
-      <h3>Ad Options</h3>
-      <!--<div class="form-group">
-        <label for="image" class="col-sm-3 control-label">Image</label>
-        <div class="col-sm-9">{{input type="file" id="image" class="form-control" value=image}}</div>
-      </div>-->
-      <div class="form-group">
-        <label for="ad-text" class="col-sm-3 control-label">Text</label>
-        <div class="col-sm-9">{{textarea id="ad-text" class="form-control" value=ad_text}}</div>
+  </div>
+  <div class="form-inline">
+    <h3>Price Details</h3>
+    <div class="form-group">
+      The customer must spend at least
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+        {{input type="text" id="min-spend" class="form-control" value=min_spend}}
       </div>
+      to use their coupon.
     </div>
-    <div class="form-inline">
-      <h3>Targeting</h3>
-      <div class="form-group">
-        The customer should be no more than
-        {{input type="text" id="max_distance" class="form-control" value=max_distance}}
-        {{view Ember.Select content=distanceUnits id="distance-unit" class="form-control" value=distance_unit}}
-        away from my address.
+    <br><br>
+    <div class="form-group">
+      I am willing to spend
+      <div class="input-group">
+        <div class="input-group-addon">$</div>
+        {{input type="text" id="coupon-value" class="form-control" value=coupon_value}}
       </div>
+      per customer.
     </div>
-    <div class="form">
-      <button {{action 'save'}} id="submit" class="btn btn-default">Launch!</button>
+    <br><br>
+    <div class="form-group">
+      In total, I would like to reach about
+      {{input type="text" id="reach" class="form-control" value=reach}}
+      people today.
     </div>
-    {{#if run}}
-      {{#if succeeded}}
-        <div data-alert class="alert alert-successful">
-          Your campaign has been launched!
-        </div>
-      {{else}}
-        <div data-alert class="alert alert-danger">
-          Failed to launch your campaign.
-        </div>
-      {{/if}}
+  </div>
+  <div class="form-horizontal">
+    <h3>Ad Options</h3>
+    <!--<div class="form-group">
+      <label for="image" class="col-sm-3 control-label">Image</label>
+      <div class="col-sm-9">{{input type="file" id="image" class="form-control" value=image}}</div>
+    </div>-->
+    <div class="form-group">
+      <label for="ad-text" class="col-sm-3 control-label">Text</label>
+      <div class="col-sm-9">{{textarea id="ad-text" class="form-control" value=ad_text}}</div>
+    </div>
+  </div>
+  <div class="form-inline">
+    <h3>Targeting</h3>
+    <div class="form-group">
+      The customer should be no more than
+      {{input type="text" id="max_distance" class="form-control" value=max_distance}}
+      {{view Ember.Select content=distanceUnits id="distance-unit" class="form-control" value=distance_unit}}
+      away from my address.
+    </div>
+  </div>
+  <div class="form">
+    <button {{action 'save'}} id="submit" class="btn btn-default">Launch!</button>
+  </div>
+  {{#if run}}
+    {{#if succeeded}}
+      <div data-alert class="alert alert-successful">
+        Your campaign has been launched!
+      </div>
+    {{else}}
+      <div data-alert class="alert alert-danger">
+        Failed to launch your campaign.
+      </div>
     {{/if}}
-  </form>
+  {{/if}}
+</form>
