@@ -1,0 +1,67 @@
+  <h1>BuyCombinator</h1>
+  <div id="campaign">
+    <h2>Start a new coupon campaign</h2>
+    <form class="form-horizontal">
+      <h3>General Information</h3>
+      <div class="form-group">
+        <label for="business-name" class="col-sm-3 control-label">Business Name</label>
+        <div class="col-sm-9"><input type="text" id="business-name" class="form-control" placeholder="The name of your business"></div>
+      </div>
+      <div class="form-group">
+        <label for="business-location" class="col-sm-3 control-label">Location</label>
+        <div class="col-sm-9"><input type="text" id="business-location" class="form-control" placeholder="Your physical address"></div>
+      </div>
+    </form>
+    <form class="form-inline">
+      <h3>Price Details</h3>
+      <div class="form-group">
+        The customer must spend at least
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+          <input type="text" id="min-spend" class="form-control">
+        </div>
+        to use their coupon.
+      </div>
+      <br><br>
+      <div class="form-group">
+        I am willing to spend
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+          <input type="text" id="coupon-value" class="form-control">
+        </div>
+        per customer.
+      </div>
+      <br><br>
+      <div class="form-group">
+        In total, I would like to reach about
+        <input type="text" id="reach" class="form-control">
+        people today.
+      </div>
+    </form>
+    <form class="form-horizontal">
+      <h3>Ad Options</h3>
+      <div class="form-group">
+        <label for="image" class="col-sm-3 control-label">Image</label>
+        <div class="col-sm-9"><input type="file" id="image"></div>
+      </div>
+      <div class="form-group">
+        <label for="ad-text" class="col-sm-3 control-label">Text</label>
+        <div class="col-sm-9"><textarea type="file" id="ad-text" class="form-control"></textarea></div>
+      </div>
+    </form>
+    <form class="form-inline">
+      <h3>Targeting</h3>
+      <div class="form-group">
+        The customer should be no more than
+        <input type="distance" id="reach" class="form-control">
+        <select id="distance-unit" class="form-control">
+          <option value="feet">feet</option>
+          <option value="feet">miles</option>
+        </select>
+        away from my address.
+      </div>
+    </form>
+    <form class="form">
+      <button type="submit" id="submit" class="btn btn-default">Launch!</button>
+    </form>
+  </div>

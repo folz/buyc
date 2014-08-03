@@ -343,3 +343,32 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+h1 {
+  text-align: center;
+  padding: 24px 0;
+  margin: 0;
+  background-color: #80A480;
+  color: white;
+  font-weight: lighter;
+  font-size: 40px;
+}
+
+#campaign {
+  max-width: 800px;
+  padding: 24px;
+  margin: auto;
+}
+
+#campaign form {
+  margin: 48px 0;
+}
+
+.form-inline .input-group>.form-control, .form-inline .form-control {
+  width: 70px;
+}
+
+#submit {
+  display: block;
+  margin: auto;
+}
